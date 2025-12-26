@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: npm run build -- --configuration production
+        run: npm run build
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
@@ -31,3 +31,4 @@ jobs:
           app-name: angular-standalone-linux
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B31720E358F44FDDA46BF92A74990480 }}
           package: dist/sample-angular-standalone
+
